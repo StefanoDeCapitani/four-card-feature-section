@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  font-family: 'Poppins', sans-serif;
+}
+
+ body {
+   min-height: 100vh;
+   background: var(--very-light-gray);
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+ /*------ Typography ------*/
+
+ h1, h2{
+   font-size: 1.5rem;
+   margin: 0.2rem 0;
+   text-align: center;
+ }
+
+ h1, h2, h3, p{
+   color: var(--very-dark-blue);
+ }
+
+ h2{
+   font-weight: 200;
+ }
+
+ h3{
+   font-size: 1rem;
+ }
+
+ p{
+   margin-top: 1rem;
+   font-size: 0.9rem;
+   font-weight: 200;
+   line-height: 1.4rem;
+   text-align: center;
+ }
+
+ main p {
+   margin-top: 0;
+   font-size: 0.8rem;
+   text-align: left;
+ }
+
+ header, main {
+   width: 85%;
+ }
+
+ header {
+  margin-top: 5rem;
+ }
+
+ main {
+   margin-top: 2rem;
+   margin-bottom: 8rem;
+ }
+
+ .card {
+   position: relative;
+   height: 200px;
+   margin-top: 1.5rem;
+   background: white;
+
+   border-radius: 0.5rem;
+   overflow: hidden;
+
+   box-shadow: 0 5px 1rem hsl(234, 12%, 34%, 10%);
+ }
+
+ .card div {
+   height: 100%;
+   padding: 1.5rem;
+ }
+
+ .card#cyan div{
+    border-top: 4px solid var(--cyan);
+  }
+
+.card#red div{
+   border-top: 4px solid var(--red);
+ }
+
+ .card#orange div{
+    border-top: 4px solid var(--orange);
+  }
+
+  .card#blue div{
+    border-top: 4px solid var(--blue);
+  }
+
+  .icon{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 66px;
+  }
+
+ footer.attribution {
+   font-size: 11px;
+   text-align: center;
+ }
+
+ .attribution a {
+   color: var(--blue);
+ }
+
+ @media screen and (min-width: 1080px){
+   h1, h2{
+     font-size: 2rem;
+     line-height: 2rem;
+     text-align: center;
+   }
+
+    header {
+      margin-top: 3rem;
+      height: 20vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header p {
+      margin-top: 1rem;
+      width: 50ch;
+    }
+
+    main {
+      margin-top: 0;
+      margin-bottom: auto;
+      height: 60vh;
+      width: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "emptyA red emptyB"
+                            "cyan red blue"
+                            "cyan orange blue"
+                            "emptyC orange emptyD";
+      grid-gap: 1.5rem;
+    }
+
+    .card {
+      width: 330px;
+      height: 200px;
+    }
+
+    .card#cyan {
+      grid-area: cyan;
+    }
+
+    .card#red {
+      grid-area: red;
+    }
+
+    .card#orange {
+      grid-area: orange;
+    }
+
+    .card#blue {
+      grid-area: blue;
+    }
+ }
